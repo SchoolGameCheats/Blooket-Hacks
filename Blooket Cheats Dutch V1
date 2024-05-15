@@ -652,3 +652,5 @@ details summary ~ * {
     function toggleHidden(e) {
         e.code == 'KeyE' && (GUI.hidden = !GUI.hidden)
     };
+    addEventListener('keypress', toggleHidden);
+})()
