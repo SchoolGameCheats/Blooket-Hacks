@@ -650,7 +650,7 @@ details summary ~ * {
         };
     };
     function toggleHidden(e) {
-        e.code == 'KeyE' && (GUI.hidden = !GUI.hidden)
+        e.code == 'KeyM' && (GUI.hidden = !GUI.hidden)
     };
     addEventListener('keypress', toggleHidden);
 })()
