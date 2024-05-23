@@ -136,7 +136,7 @@ details summary ~ * {
     bodyDiv.appendChild(body);
     GUI.appendChild(bodyDiv);
 
-    body.innerHTML = (`<span id="curPageEl">${getSite(true) ? `Current gamemode: ${getSite(true)}` : 'No game detected'}</span><br><span>(Press E to hide)</span><br>`);
+    body.innerHTML = (`<span id="curPageEl">${getSite(true) ? `Current gamemode: ${getSite(true)}` : 'No game detected'}</span><br><span>(Press M to hide)</span><br>`);
     body.style.display = 'block';
     body.style.margin = '10px';
     //body.style.background = 'white';
@@ -650,7 +650,7 @@ details summary ~ * {
         };
     };
     function toggleHidden(e) {
-        e.code == 'KeyE' && (GUI.hidden = !GUI.hidden)
+        e.code == 'KeyM' && (GUI.hidden = !GUI.hidden)
     };
     addEventListener('keypress', toggleHidden);
 })()
