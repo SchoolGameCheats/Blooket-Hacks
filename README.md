@@ -5,6 +5,6 @@ press right mouse button en klik inspect>console and put any of the two code in 
 
 
 # Status
-Status Dutch hacks: Working but some buttons er in in english
+Status Dutch hacks: Working but some buttons are in in english | updating.........
 
 Status Englis hacks: Working with no bugs
