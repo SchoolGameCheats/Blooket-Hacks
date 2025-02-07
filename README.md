@@ -14,7 +14,7 @@ May 22, 2024 | V1
 Jun 18, 2024 | V1.1
 
 Jun 18, 2024 | V1.2
-# update logs Dutch
+# update logs Dutch Cheats
 Jun 18, 2024 | V1
 
 Feb 7, 2025  | V1.1
