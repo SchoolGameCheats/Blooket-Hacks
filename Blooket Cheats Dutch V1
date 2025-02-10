@@ -29,11 +29,11 @@ details summary ~ * {
 }
 .cheat {
     border: none;
-    background: hsl(0, 0%, 20%);
+    background: hsl(0, 0%, 50%);
     padding: 5px;
     margin: 3px;
     width: 60%;
-    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 25%);
     transition: 0.2s;
     border-radius: 5px;
     cursor: pointer;
@@ -84,7 +84,8 @@ details summary ~ * {
     header.style.paddingTop = '2px';
     header.style.fontSize = '1.5rem';
     header.style.textAlign = 'center'
-    header.innerHTML = `Blooket hacks <span style="font-size: 0.75rem">V1</span>`;
+    header.innerHTML = `Blooket 
+assistent <span style="font-size: 0.75rem">V1.1</span>`;
 
     let loop;
 
@@ -113,7 +114,7 @@ details summary ~ * {
 
     let minimize = document.createElement('button');
     header.appendChild(minimize);
-    minimize.style.background = '#444444';
+    minimize.style.background = '#44444';
     minimize.style.height = '45px';
     minimize.style.width = '45px';
     minimize.style.border = 'none';
@@ -136,7 +137,7 @@ details summary ~ * {
     bodyDiv.appendChild(body);
     GUI.appendChild(bodyDiv);
 
-    body.innerHTML = (`<span id="curPageEl">${getSite(true) ? `Huidige spelmodus: ${getSite(true)}` : 'geen spel gedetecteerd'}</span><br><span>(Druk op E om te verbergen)</span><br>`);
+    body.innerHTML = (`<span id="curPageEl">${getSite(true) ? `Huidige spelmodus: ${getSite(true)}` : 'geen spel gedetecteerd'}</span><br><span>(Druk op W om te verbergen)</span><br>`);
     body.style.display = 'block';
     body.style.margin = '10px';
     //body.style.background = 'white';
@@ -182,7 +183,7 @@ details summary ~ * {
 
     let cheats = {
         global: {
-            'Get Daily Rewards': () => {
+            'Ontvang dagelijkse beloningen': () => {
                 fetch("https://api.blooket.com/api/users", { credentials: "include" }).then(x => x.json()).then(x => {
                     getValues().then(async e => {
                         fetch("https://api.blooket.com/api/users/add-rewards", {
@@ -210,12 +211,12 @@ details summary ~ * {
                                 addedTokens: 250,
                                 addedXp: 300
                             }, e.secret)
-                        }).then(() => alert('Added daily rewawrds!')).catch(() => alert('There was an error when adding rewards!'));;
-                    }).catch(() => alert('There was an error encoding requests!'));
-                }).catch(() => alert('There was an error getting username!'));
+                        }).then(() => alert('Added daily rewawrds!')).catch(() => alert('Sorry, maar dit is al gepatcht door Blooket.'));;
+                    }).catch(() => alert('Sorry, maar dit is al gepatcht door Blooket.'));
+                }).catch(() => alert('Sorry, maar dit is al gepatcht door Blooket.'));
             },
-            'Spoof Blooks': () => {
-                if (!window.location.pathname.split('/').includes('lobby')) return alert('You must be in a game lobby! (e.g. https://www.blooket.com/play/lobby)');
+            'Spoof Blokken': () => {
+                if (!window.location.pathname.split('/').includes('lobby')) return alert('Je moet in een game lobby zijn! (e.g. https://www.blooket.com/play/lobby)');
                 reactHandler().stateNode.setState({ lockedBlooks: [], takenBlooks: [] });
             },
             'Automatisch antwoord': () => { autoAnswer = !autoAnswer },
@@ -296,42 +297,42 @@ details summary ~ * {
             }
         },
         cafe: {
-            'Infinite Food': () => {
-                if (document.location.pathname != "/cafe") return alert("This cheat doesn't work in the shop!");
+            'Oneindig voedsel': () => {
+                if (document.location.pathname != "/cafe") return alert("Oops! We're sorry, but this has already been patched by Blooket. rewards!");
                 reactHandler().stateNode.state.foods.forEach(e => e.stock = 99999);
                 reactHandler().stateNode.forceUpdate();
             },
-            'Max Levels': () => {
-                if (document.location.pathname != "/cafe/shop") return alert("This cheat only works in the shop!");
+            'Maximale niveaus': () => {
+                if (document.location.pathname != "/cafe/shop") return alert("Oops! We're sorry, but this has already been patched by Blooket. rewards!");
                 Object.keys(reactHandler().stateNode.state.items).forEach(x => reactHandler().stateNode.state.items[x] = 5);
                 reactHandler().stateNode.forceUpdate();
             },
-            'Cash instellen': () => {
+            'Geld instellen': () => {
                 reactHandler().stateNode.setState({ cafeCash: Number(parseFloat(prompt('owH Hoeveel contant geld wil je?'))) });
             },
-            'Reset Abilities': () => {
+            'Vaardigheden resetten': () => {
                 Object.keys(reactHandler().stateNode.state.abilities).forEach(x => reactHandler().stateNode.state.abilities[x] = 5);
                 reactHandler().stateNode.forceUpdate();
             }
         },
         kingdom: {
-            'Choice ESP': () => { choiceESP = !choiceESP },
+            'Keuze ESP': () => { choiceESP = !choiceESP },
             'Max Stats': () => {
                 reactHandler().stateNode.setState({ materials: 100, people: 100, happiness: 100, gold: 100 });
             },
-            'Disable Toucan': () => {
+            'Toucan uitschakelen': () => {
                 reactHandler().stateNode.taxCounter = Number.MAX_VALUE;
             },
-            'Guests instellen': () => {
+            'Gasten instellen': () => {
                 let guestScore = Number(parseFloat(prompt('Hoeveel guests wil je??')));
                 reactHandler().stateNode.setState({ guestScore });
             },
-            'Skip Guest': () => {
+            'Gast overslaan': () => {
                 reactHandler().stateNode.nextGuest();
             }
         },
         crypto: {
-            'Auto Hack': () => { autoPassword = !autoPassword },
+            'Auto hacken': () => { autoPassword = !autoPassword },
             'crypto instellen': () => {
                 let amount = Number(parseFloat(prompt('Hoeveel crypto wil je?')));
                 reactHandler().stateNode.setState({ crypto2: amount, crypto: amount });
@@ -367,11 +368,11 @@ details summary ~ * {
             }
         },
         factory: {
-            'All Mega Bot': () => {
+            'Alle Mega Bot': () => {
                 let blooks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].fill({ name: "Mega Bot", color: "#d71f27", class: "🤖", rarity: "Legendary", cash: [80000, 430000, 4200000, 62000000, 1000000000], time: [5, 5, 3, 3, 3], price: [7000000, 120000000, 1900000000, 35000000000], active: false, level: 4, bonus: 5.5 })
                 reactHandler().stateNode.setState({ blooks });
             },
-            'Remove Glitches': () => {
+            'Glitches verwijderen': () => {
                 reactHandler().stateNode.setState({
                     glitch: "",
                     bites: 0,
@@ -384,20 +385,20 @@ details summary ~ * {
                     popUpAmount: 0,
                 });
             },
-            'Max Blooks': () => {
+            'Max Blokken': () => {
                 reactHandler().stateNode.state.blooks.forEach(blook => { blook.level = 4 });
             },
-            'Set Cash': () => {
+            'Geld instellen': () => {
                 let cash = Number(parseFloat(prompt('Hoeveel geld wil je?')));
                 reactHandler().stateNode.setState({ cash });
             },
         },
         fishing: {
-            'Set Weight': () => {
+            'Gewicht instellen': () => {
                 let weight = Number(parseFloat(prompt('Hoeveel gewicht wil je?')));
                 reactHandler().stateNode.setState({ weight2: weight, weight });
             },
-            'Set Lure': () => {
+            'Lok instellen': () => {
                 let lure = Number(parseFloat(prompt('What do you want to set your lure to? (1 - 5)'))) - 1;
                 reactHandler().stateNode.setState({ lure: lure < 0 ? 0 : lure > 4 ? 4 : lure });
             }
@@ -510,7 +511,7 @@ details summary ~ * {
     };
 
     let global = document.createElement('details');
-    global.innerHTML = (`<summary style="padding: 10px; font-size: 1.5em; font-weight: bolder">Global</summary>`);
+    global.innerHTML = (`<summary style="padding: 10px; font-size: 1.5em; font-weight: bolder">Cheats</summary>`);
     for (var i = 0; i < Object.keys(cheats.global).length; i++) {
         let cheat = createButton(Object.keys(cheats.global)[i]);
         cheat.onclick = cheats.global[Object.keys(cheats.global)[i]];
@@ -650,7 +651,7 @@ details summary ~ * {
         };
     };
     function toggleHidden(e) {
-        e.code == 'KeyM' && (GUI.hidden = !GUI.hidden)
+        e.code == 'KeyW' && (GUI.hidden = !GUI.hidden)
     };
     addEventListener('keypress', toggleHidden);
 })()
